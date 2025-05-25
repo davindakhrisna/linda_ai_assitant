@@ -1,0 +1,12 @@
+pyaudio
+RealTimeSTT
+RealtimeTTS 
+torch 
+google-generativeai 
+opencv-python 
+pillow 
+mss
+psutil 
+GPUtil 
+elevenlabs 
+python-dotenv
