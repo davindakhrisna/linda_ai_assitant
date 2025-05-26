@@ -1,0 +1,23 @@
+{
+  "name": "liz_assistant",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/davindakhrisna/liz_ai_assistant#readme",
+  "bugs": {
+    "url": "https://github.com/davindakhrisna/liz_ai_assistant/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davindakhrisna/liz_ai_assistant.git"
+  },
+  "license": "ISC",
+  "author": "davindakhrisna85",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "lucide-react": "^0.511.0"
+  }
+}

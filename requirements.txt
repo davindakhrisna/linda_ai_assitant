@@ -1,7 +1,7 @@
 pyaudio
 RealTimeSTT
 RealtimeTTS 
-torch 
+torch
 google-generativeai 
 opencv-python 
 pillow 
