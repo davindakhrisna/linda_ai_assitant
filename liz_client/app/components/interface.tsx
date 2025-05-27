@@ -13,7 +13,7 @@ const Interface: FC<InterfaceProps> = ({ Visualizer, Camera }) => {
   return (
     <div className="w-full h-screen">
       <header className="justify-center flex p-10 bg-black">
-        <h1 className="text-center text-2xl">Logical Integrated Zipper</h1>
+        <h1 className="text-center text-2xl">L.I.N.D.A</h1>
       </header>
 
       <div className="h-[550px] drop-shadow-2xl/30 bg-black">
