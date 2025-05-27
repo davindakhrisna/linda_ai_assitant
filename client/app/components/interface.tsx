@@ -1,6 +1,6 @@
 import { FC } from "react";
-import MuteButton from "../components/camfeed_components/mutebutton";
-import CamButton from "../components/camfeed_components/camfeedbutton";
+import MuteButton from "./camfeed_components/mutebutton";
+import CamButton from "./camfeed_components/camfeedbutton";
 interface InterfaceProps {
   Visualizer: FC;
   Camera: FC<{
