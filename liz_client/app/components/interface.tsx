@@ -22,8 +22,8 @@ const Interface: FC<InterfaceProps> = ({ Visualizer, Camera }) => {
             <Camera CamButton={CamButton} MuteButton={MuteButton} />
           </div>
           <div className="flex flex-col justify-between items-center w-7/12 h-[630px]">
-            <div className="w-full h-[320px] text-center text-xl overflow-auto">
-              <p>
+            <div className="flex w-full h-[320px] text-center text-xl overflow-auto">
+              <p className="flex items-center">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Maecenas mattis nunc sed nisi molestie aliquam. Morbi egestas
                 lectus tortor, sit amet pulvinar orci finibus id. Nam dapibus
@@ -32,14 +32,6 @@ const Interface: FC<InterfaceProps> = ({ Visualizer, Camera }) => {
                 sodales posuere ante, non efficitur metus sodales eu. Phasellus
                 eget magna at elit ornare rutrum in eu metus. Nullam ex massa,
                 tempor non ex sed, semper sollicitudin odio.Lorem ipsum dolor
-                sit amet, consectetur adipiscing elit. Maecenas mattis nunc sed
-                nisi molestie aliquam. Morbi egestas lectus tortor, sit amet
-                pulvinar orci finibus id. Nam dapibus neque at ultrices finibus.
-                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-                posuere cubilia curae; Morbi sodales posuere ante, non efficitur
-                metus sodales eu. Phasellus eget magna at elit ornare rutrum in
-                eu metus. Nullam ex massa, tempor non ex sed, semper
-                sollicitudin odio.
               </p>
             </div>
 
