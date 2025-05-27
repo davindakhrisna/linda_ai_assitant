@@ -75,8 +75,58 @@ export default function Visual({
   }, [dotsMemo]);
 
   return (
-    <div>
-      {/* save for later
+    <div
+      className={`p-6 space-y-4 rounded-2xl shadow-2xl bg-black border-4 ${
+        state === "idle"
+          ? "border-gray-600"
+          : state === "listening"
+          ? "border-green-600"
+          : "border-blue-600"
+      }`}
+    >
+      <div className="text-center">
+        <p
+          className={`font-semibold capitalize ${
+            state === "idle"
+              ? "text-gray-600"
+              : state === "listening"
+              ? "text-green-600"
+              : "text-blue-600"
+          }`}
+        >
+          {state}
+        </p>
+      </div>
+      <div
+        className="grid gap-1"
+        style={{
+          gridTemplateColumns: `repeat(${cols}, 1fr)`,
+          gridTemplateRows: `repeat(${rows}, 1fr)`,
+        }}
+      >
+        {dots.map((dot) => (
+          <div
+            key={dot.id}
+            className={`dot ${state}`}
+            style={
+              {
+                "--base-size": dot.baseSize,
+                "--delay": `${dot.delay}s`,
+                "--row": dot.row,
+                "--col": dot.col,
+                "--angle": dot.angle,
+                "--distance": dot.distance,
+              } as React.CSSProperties
+            }
+          ></div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+{
+  /* save for later
       <div className="flex flex-col space-y-4">
         <button
           onClick={() => handleStateChange("idle")}
@@ -109,47 +159,5 @@ export default function Visual({
           Speaking
         </button>
       </div>
-      */}
-
-      <div className="p-6 space-y-4 rounded-2xl shadow-2xl bg-black">
-        <div className="text-center">
-          <p
-            className={`font-semibold capitalize ${
-              state === "idle"
-                ? "text-gray-600"
-                : state === "listening"
-                ? "text-green-600"
-                : "text-blue-600"
-            }`}
-          >
-            {state}
-          </p>
-        </div>
-        <div
-          className="grid gap-1"
-          style={{
-            gridTemplateColumns: `repeat(${cols}, 1fr)`,
-            gridTemplateRows: `repeat(${rows}, 1fr)`,
-          }}
-        >
-          {dots.map((dot) => (
-            <div
-              key={dot.id}
-              className={`dot ${state}`}
-              style={
-                {
-                  "--base-size": dot.baseSize,
-                  "--delay": `${dot.delay}s`,
-                  "--row": dot.row,
-                  "--col": dot.col,
-                  "--angle": dot.angle,
-                  "--distance": dot.distance,
-                } as React.CSSProperties
-              }
-            ></div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+      */
 }

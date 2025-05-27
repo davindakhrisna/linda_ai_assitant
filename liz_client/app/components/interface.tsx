@@ -1,21 +1,25 @@
 import { FC } from "react";
-
+import MuteButton from "../components/camfeed_components/mutebutton";
+import CamButton from "../components/camfeed_components/camfeedbutton";
 interface InterfaceProps {
-  MuteButton: FC;
   Visualizer: FC;
+  Camera: FC<{
+    CamButton: FC<{ HandleCamera: (data: boolean) => void }>;
+    MuteButton: FC;
+  }>;
 }
 
-const Interface: FC<InterfaceProps> = ({ MuteButton, Visualizer }) => {
+const Interface: FC<InterfaceProps> = ({ Visualizer, Camera }) => {
   return (
     <div className="w-full h-screen">
       <header className="justify-center flex p-10 bg-black">
         <h1 className="text-center text-2xl">Logical Integrated Zipper</h1>
       </header>
 
-      <div className="relative h-[550px] drop-shadow-2xl/30 bg-black">
+      <div className="h-[550px] drop-shadow-2xl/30 bg-black">
         <div className="flex justify-between absolute top-42 w-full h-full px-24">
-          <div className="h-full w-[510px] z-[9999] bg-black border-2 border-blue-800 shadow-[12px_8px_24px_rgba(0,0,0,0.45)]">
-            <MuteButton />
+          <div className="flex items-center justify-center h-full w-[510px] z-[9999] rounded-4xl bg-black border-2 border-blue-800 shadow-[12px_8px_24px_rgba(0,0,0,0.45)]">
+            <Camera CamButton={CamButton} MuteButton={MuteButton} />
           </div>
           <div className="flex flex-col justify-between items-center w-7/12 h-[630px]">
             <div className="w-full h-[320px] text-center text-xl overflow-auto">

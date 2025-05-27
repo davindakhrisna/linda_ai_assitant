@@ -1,7 +1,7 @@
-import MuteButton from "./components/mutebutton";
 import Interface from "./components/interface";
 import Visualizer from "./components/ai_visualizer";
+import Camera from "./components/ai_camfeed";
 
 export default function Home() {
-  return <Interface MuteButton={MuteButton} Visualizer={Visualizer} />;
+  return <Interface Visualizer={Visualizer} Camera={Camera} />;
 }

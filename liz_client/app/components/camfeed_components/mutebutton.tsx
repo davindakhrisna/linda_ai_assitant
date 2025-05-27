@@ -9,11 +9,11 @@ export default function MuteButton() {
   useEffect(() => {
     const fetchIcons = async () => {
       const muteRes = await fetch(
-        "https://api.iconify.design/mdi:volume-mute.svg"
+        "https://api.iconify.design/bxs:microphone-off.svg"
       );
       setMuteSvg(await muteRes.text());
       const unmuteRes = await fetch(
-        "https://api.iconify.design/mdi:volume-high.svg"
+        "https://api.iconify.design/mdi:microphone.svg"
       );
       setUnmuteSvg(await unmuteRes.text());
     };
@@ -22,7 +22,7 @@ export default function MuteButton() {
 
   const handleClick = async () => {
     setIsMuted((prev) => !prev);
-    const status = isMuted ? "You Speaking" : "You Are Muted";
+    const status = isMuted ? "You're Speaking" : "You're Muted";
     alert(status);
   };
 
@@ -30,7 +30,9 @@ export default function MuteButton() {
 
   return (
     <button
-      className="rounded-4xl bg-blue-700 p-4 m-8 cursor-pointer"
+      className={`rounded-4xl  p-4 cursor-pointer ${
+        isMuted ? "bg-gray-700" : "bg-blue-700"
+      }`}
       onClick={handleClick}
     >
       {icon && <span dangerouslySetInnerHTML={{ __html: icon }} />}
