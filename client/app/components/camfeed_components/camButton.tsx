@@ -1,11 +1,11 @@
 "use client";
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-interface CamButtonProps {
-  HandleCamera: (data: boolean) => void;
-}
-
-const CamButton: FC<CamButtonProps> = ({ HandleCamera }) => {
+const CamButton = ({
+  setIsCameraOn,
+}: {
+  setIsCameraOn: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   const [isPlay, setIsPlay] = useState(true);
   const [pauseSvg, setPauseSvg] = useState<string | null>(null);
   const [playSvg, setPlaySvg] = useState<string | null>(null);
@@ -23,16 +23,14 @@ const CamButton: FC<CamButtonProps> = ({ HandleCamera }) => {
   const handleClick = async () => {
     const newState = !isPlay;
     setIsPlay(newState);
-    HandleCamera(newState);
-    const status = newState ? "Camera Enabled" : "Camera Disabled";
-    alert(status);
+    setIsCameraOn(newState);
   };
 
   const icon = !isPlay ? pauseSvg : playSvg;
 
   return (
     <button
-      className={`rounded-4xl  p-4 cursor-pointer ${
+      className={`rounded-4xl  p-5 cursor-pointer ${
         !isPlay ? "bg-gray-700" : "bg-blue-700"
       }`}
       onClick={handleClick}
